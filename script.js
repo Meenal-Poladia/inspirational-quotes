@@ -8,11 +8,8 @@ const showButton = () => {
 }
 
 const displayQuote = () => {
-
-    //fetch(`https://game-of-thrones-quotes.herokuapp.com/v1/random/5`)
       fetch(`https://secret-ocean-49799.herokuapp.com/https://inspiration.goprogram.ai/`)
         .then(response => {
-            console.log(response);
             if(!response.ok) {
                 throw new Error(`No quote to display.`)
             }
@@ -21,7 +18,7 @@ const displayQuote = () => {
         .then(data => {
             const newData = ({...data});
            quotation.textContent = newData.quote;
-            quoteContainer.classList.remove("hidden");
+           quoteContainer.classList.remove("hidden");
         })
         .catch(err => console.log(`${err}`))
 }
